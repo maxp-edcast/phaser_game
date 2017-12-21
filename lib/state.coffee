@@ -1,39 +1,43 @@
-module.exports = load: (caller) ->
-  
-  game_width = GameWidth
-  game_height = GameHeight
+module.exports = load: (caller) -> (->
 
-  midpoint_x = game_width / 2 
-  midpoint_y = game_height / 2
+  { game } = caller
 
-  hidden_x = -500
-  hidden_y = -500
+  @game_width = GameWidth
+  @game_height = GameHeight
 
-  collision_groups = {}
-  materials = {}
-  contact_materials = {}
-  groups = {}
-  animations = {}
-  
-  cursors = caller.game.input.keyboard.createCursorKeys();
-  
-  gravity =
+  @midpoint_x = @game_width / 2
+  @midpoint_y = @game_height / 2
+
+  @collision_groups = {}
+  @materials = {}
+  @contact_materials = {}
+  @groups = {}
+  @animations = {}
+
+  @player = null
+  @player_anim_speed = 5
+  @player_walking = false
+  @player_walking_direction = null
+
+  @rock_anim_speed = 5
+
+  @keys =
+    W: Phaser.Keyboard.W
+    A: Phaser.Keyboard.A
+    S: Phaser.Keyboard.S
+    D: Phaser.Keyboard.D
+
+  @cursors = game.input.keyboard.createCursorKeys()
+  @game_keys =
+    W: game.input.keyboard.addKey @keys.W
+    A: game.input.keyboard.addKey @keys.A
+    S: game.input.keyboard.addKey @keys.S
+    D: game.input.keyboard.addKey @keys.D
+
+  @gravity =
     x: 0
     y: 800
 
-  {
+  this
 
-    game_width,
-    game_height,
-    midpoint_x,
-    midpoint_y,
-    hidden_x,
-    hidden_y,
-    collision_groups,
-    materials,
-    contact_materials,
-    groups,
-    animations,
-    cursors,
-    gravity
-  }
+).apply {}

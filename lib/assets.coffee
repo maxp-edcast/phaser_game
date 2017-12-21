@@ -4,4 +4,8 @@
 # - New assets should be added both here and preload.coffee
 # ------------------------------------------------
 
-module.exports = Assets = {}
+module.exports = Assets =
+  player: "assets/player_spritesheet.png"
+  rock: "assets/rock_spritesheet.png"
+  rock_physics: "assets/rock.json"
+  invisible: "assets/invisible.png"

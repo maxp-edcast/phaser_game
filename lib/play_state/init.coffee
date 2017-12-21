@@ -7,7 +7,7 @@ module.exports = ->
 
   @physics.startSystem Phaser.Physics.P2JS
   @game.physics.p2.setImpactEvents(true);
-  Object.assign @game.physics.p2.gravity, @gravity
+  # Object.assign @game.physics.p2.gravity, @gravity
 
+  # For debugging only
   window.App = this
-  

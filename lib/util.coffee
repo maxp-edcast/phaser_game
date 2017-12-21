@@ -1,4 +1,4 @@
-module.exports = Util = 
+module.exports = Util =
 
   random_int: (min, max) ->
     Math.floor(Math.random() * (max - min + 1)) + min
@@ -8,7 +8,7 @@ module.exports = Util =
 
   collide_world_bounds: (sprite) ->
     sprite.body.collideWorldBounds = true
-  
+
   add_physics_file: (sprite, physics_file, physics_file_key) ->
     sprite.body.clearShapes()
     sprite.body.loadPolygon physics_file, physics_file_key
