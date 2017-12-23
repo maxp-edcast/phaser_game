@@ -1,0 +1,4 @@
+PalletTown = =>
+  @areas =
+    road:
+      

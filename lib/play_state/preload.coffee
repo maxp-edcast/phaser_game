@@ -1,4 +1,5 @@
 module.exports = ->
+
   @game.load.spritesheet(
     'player', @Assets.player,
     64,64,16
@@ -12,6 +13,16 @@ module.exports = ->
     'rock_physics', @Assets.rock_physics
   )
 
-  @game.load.image(
-    'invisible', @Assets.invisible
+  @game.load.tilemap(
+    "tilemap1",
+    @Assets.tilemap1,
+    null,
+    Phaser.Tilemap.TILED_JSON
   )
+
+# (key, tileWidth, tileHeight, width, height
+  @game.load.image("tileset1", @Assets.tileset1)
+  # @game.load.image("object1", @Assets.object1)
+
+
+
