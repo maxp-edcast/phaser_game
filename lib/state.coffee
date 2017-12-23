@@ -2,24 +2,22 @@ module.exports = load: (caller) -> (->
 
   { game } = caller
 
-  @game_width = GameWidth
-  @game_height = GameHeight
+  @debug_mode = true
 
-  @midpoint_x = @game_width / 2
-  @midpoint_y = @game_height / 2
+  @width = 700
+  @height = 500
+
+  @player_movement_speed = 200
+
+  @gravity =
+    x: 0
+    y: 800
 
   @collision_groups = {}
   @materials = {}
   @contact_materials = {}
   @groups = {}
   @animations = {}
-
-  @player = null
-  @player_anim_speed = 5
-  @player_walking = false
-  @player_walking_direction = null
-
-  @rock_anim_speed = 5
 
   @keys =
     W: Phaser.Keyboard.W
@@ -34,9 +32,6 @@ module.exports = load: (caller) -> (->
     S: game.input.keyboard.addKey @keys.S
     D: game.input.keyboard.addKey @keys.D
 
-  @gravity =
-    x: 0
-    y: 800
 
   this
 

@@ -1,35 +1,16 @@
 module.exports = ->
 
-  # -----------------------------------------------------------------------------
   # Load state, util, and assets
-  # -----------------------------------------------------------------------------
-
   Object.assign this,
-    require("../state").load(this),
     require("../util"),
     Assets: require("../assets")
 
-  # -----------------------------------------------------------------------------
-  # Use phaser physics
-  # -----------------------------------------------------------------------------
+  Object.assign this, state: GameState
 
+  # Use phaser physics
   @physics.startSystem Phaser.Physics.P2JS
   @game.physics.p2.setImpactEvents(true);
 
-  # -----------------------------------------------------------------------------
-  # Set gravity?
-  # -----------------------------------------------------------------------------
-
-  # Object.assign @game.physics.p2.gravity, @gravity
-
-  # -----------------------------------------------------------------------------
-  # Debug mode? (Shows hitbox outlines)
-  # -----------------------------------------------------------------------------
-
-  window.debugMode = true
-
-  # -----------------------------------------------------------------------------
-  # Useful for debugging
-  # -----------------------------------------------------------------------------
-
+  # Debug mode
+  window.debugMode = @state.debug_mode
   window.App = this
