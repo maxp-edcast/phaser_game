@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="160" height="60" tilewidth="8" tileheight="8" nextobjectid="20">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="160" height="60" tilewidth="8" tileheight="8" nextobjectid="23">
  <tileset firstgid="1" name="objects-computer" tilewidth="16" tileheight="16" tilecount="96" columns="12">
   <image source="../../tileset_images/objects-computer.png" width="192" height="128"/>
  </tileset>
@@ -62,52 +62,52 @@
  <tileset firstgid="7585" name="doors" tilewidth="8" tileheight="8" tilecount="1024" columns="32">
   <image source="../../tileset_images/doors.png" width="256" height="256"/>
  </tileset>
- <tileset firstgid="8609" name="characters5" tilewidth="8" tileheight="8" tilecount="1536" columns="24">
+ <tileset firstgid="8609" name="characters5" tilewidth="8" tileheight="8" tilecount="384" columns="24">
   <image source="../../tileset_images/characters5.png" width="192" height="128"/>
  </tileset>
- <tileset firstgid="10145" name="characters-1" tilewidth="8" tileheight="8" tilecount="96" columns="16">
+ <tileset firstgid="8993" name="characters-1" tilewidth="8" tileheight="8" tilecount="96" columns="16">
   <image source="../../tileset_images/characters-1.png" width="128" height="48"/>
  </tileset>
- <tileset firstgid="10241" name="characters-3" tilewidth="8" tileheight="8" tilecount="3456" columns="72">
+ <tileset firstgid="9089" name="characters-3" tilewidth="8" tileheight="8" tilecount="3456" columns="72">
   <image source="../../tileset_images/characters-3.png" width="576" height="384"/>
  </tileset>
- <tileset firstgid="13697" name="objects-1" tilewidth="8" tileheight="8" tilecount="2640" columns="66">
+ <tileset firstgid="12545" name="objects-1" tilewidth="8" tileheight="8" tilecount="2640" columns="66">
   <image source="../../tileset_images/objects-1.png" width="528" height="320"/>
  </tileset>
- <tileset firstgid="16337" name="objects-items" tilewidth="8" tileheight="8" tilecount="4096" columns="64">
+ <tileset firstgid="15185" name="objects-items" tilewidth="8" tileheight="8" tilecount="4096" columns="64">
   <image source="../../tileset_images/objects-items.png" width="512" height="512"/>
  </tileset>
- <tileset firstgid="20433" name="objects-natural" tilewidth="8" tileheight="8" tilecount="4096" columns="64">
+ <tileset firstgid="19281" name="objects-natural" tilewidth="8" tileheight="8" tilecount="4096" columns="64">
   <image source="../../tileset_images/objects-natural.png" width="512" height="512"/>
  </tileset>
- <tileset firstgid="24529" name="objects-plants" tilewidth="8" tileheight="8" tilecount="2704" columns="52">
+ <tileset firstgid="23377" name="objects-plants" tilewidth="8" tileheight="8" tilecount="2704" columns="52">
   <image source="../../tileset_images/objects-plants.png" width="416" height="416"/>
  </tileset>
- <tileset firstgid="27233" name="place-cave" tilewidth="8" tileheight="8" tilecount="4000" columns="80">
+ <tileset firstgid="26081" name="place-cave" tilewidth="8" tileheight="8" tilecount="4000" columns="80">
   <image source="../../tileset_images/place-cave.png" width="640" height="400"/>
  </tileset>
- <tileset firstgid="31233" name="place-desert" tilewidth="8" tileheight="8" tilecount="1248" columns="26">
+ <tileset firstgid="30081" name="place-desert" tilewidth="8" tileheight="8" tilecount="1248" columns="26">
   <image source="../../tileset_images/place-desert.png" width="208" height="384"/>
  </tileset>
- <tileset firstgid="32481" name="place-overworld" tilewidth="8" tileheight="8" tilecount="5760" columns="80">
+ <tileset firstgid="31329" name="place-overworld" tilewidth="8" tileheight="8" tilecount="5760" columns="80">
   <image source="../../tileset_images/place-overworld.png" width="640" height="576"/>
  </tileset>
- <tileset firstgid="38241" name="place-sewer" tilewidth="8" tileheight="8" tilecount="1408" columns="32">
+ <tileset firstgid="37089" name="place-sewer" tilewidth="8" tileheight="8" tilecount="1408" columns="32">
   <image source="../../tileset_images/place-sewer.png" width="256" height="352"/>
  </tileset>
- <tileset firstgid="39649" name="place-forest" tilewidth="8" tileheight="8" tilecount="5440" columns="80">
+ <tileset firstgid="38497" name="place-forest" tilewidth="8" tileheight="8" tilecount="5440" columns="80">
   <image source="../../tileset_images/place-forest.png" width="640" height="544"/>
  </tileset>
- <tileset firstgid="45089" name="rpg" tilewidth="8" tileheight="8" tilecount="97280" columns="256">
+ <tileset firstgid="43937" name="rpg" tilewidth="8" tileheight="8" tilecount="97280" columns="256">
   <image source="../../tileset_images/rpg.png" width="2048" height="3040"/>
  </tileset>
- <tileset firstgid="142369" name="rpg2" tilewidth="8" tileheight="8" tilecount="1120" columns="20">
+ <tileset firstgid="141217" name="rpg2" tilewidth="8" tileheight="8" tilecount="1120" columns="20">
   <image source="../../tileset_images/rpg2.png" width="160" height="448"/>
  </tileset>
- <tileset firstgid="143489" name="rpg3" tilewidth="8" tileheight="8" tilecount="2584" columns="34">
+ <tileset firstgid="142337" name="rpg3" tilewidth="8" tileheight="8" tilecount="2584" columns="34">
   <image source="../../tileset_images/rpg3.png" width="272" height="608"/>
  </tileset>
- <tileset firstgid="146073" name="characters-4" tilewidth="8" tileheight="8" tilecount="128" columns="8">
+ <tileset firstgid="144921" name="characters-4" tilewidth="8" tileheight="8" tilecount="128" columns="8">
   <image source="../../tileset_images/characters-4.png" width="64" height="128"/>
  </tileset>
  <layer name="Layer0" width="160" height="60">
@@ -535,11 +535,8 @@
   <object id="10" name="TakeApple" x="704" y="264">
    <polyline points="0,0 0,56 16,56 16,0 0,0"/>
   </object>
-  <object id="13" name="DrinkWater" x="504" y="160">
+  <object id="13" name="DrinkWater" x="496" y="160">
    <polyline points="0,0 0,24 -32,24 -32,0 0,0"/>
-  </object>
-  <object id="14" name="LookInTrash" x="504" y="160">
-   <polyline points="0,0 32,0 32,24 0,24"/>
   </object>
   <object id="16" name="TalkToSecurityGuard" x="360" y="160">
    <polyline points="0,0 0,24 48,24 48,0 0,0"/>
@@ -549,6 +546,9 @@
   </object>
   <object id="19" name="TalkToReceptionist" x="808" y="232">
    <polyline points="0,0 0,-48 48,-48 48,0 0,0"/>
+  </object>
+  <object id="22" name="LookInTrash" x="512" y="160">
+   <polyline points="0,0 0,24 24,24 24,8 24,0 0,0"/>
   </object>
  </objectgroup>
 </map>

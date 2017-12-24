@@ -675,35 +675,7 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":504,
-                 "y":160
-                }, 
-                {
-                 "height":0,
-                 "id":14,
-                 "name":"LookInTrash",
-                 "polyline":[
-                        {
-                         "x":0,
-                         "y":0
-                        }, 
-                        {
-                         "x":32,
-                         "y":0
-                        }, 
-                        {
-                         "x":32,
-                         "y":24
-                        }, 
-                        {
-                         "x":0,
-                         "y":24
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":504,
+                 "x":496,
                  "y":160
                 }, 
                 {
@@ -805,6 +777,42 @@
                  "width":0,
                  "x":808,
                  "y":232
+                }, 
+                {
+                 "height":0,
+                 "id":22,
+                 "name":"LookInTrash",
+                 "polyline":[
+                        {
+                         "x":0,
+                         "y":0
+                        }, 
+                        {
+                         "x":0,
+                         "y":24
+                        }, 
+                        {
+                         "x":24,
+                         "y":24
+                        }, 
+                        {
+                         "x":24,
+                         "y":8
+                        }, 
+                        {
+                         "x":24,
+                         "y":0
+                        }, 
+                        {
+                         "x":0,
+                         "y":0
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":512,
+                 "y":160
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -812,7 +820,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":20,
+ "nextobjectid":23,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.0.3",
@@ -1081,13 +1089,13 @@
          "margin":0,
          "name":"characters5",
          "spacing":0,
-         "tilecount":1536,
+         "tilecount":384,
          "tileheight":8,
          "tilewidth":8
         }, 
         {
          "columns":16,
-         "firstgid":10145,
+         "firstgid":8993,
          "image":"..\/..\/tileset_images\/characters-1.png",
          "imageheight":48,
          "imagewidth":128,
@@ -1100,7 +1108,7 @@
         }, 
         {
          "columns":72,
-         "firstgid":10241,
+         "firstgid":9089,
          "image":"..\/..\/tileset_images\/characters-3.png",
          "imageheight":384,
          "imagewidth":576,
@@ -1113,7 +1121,7 @@
         }, 
         {
          "columns":66,
-         "firstgid":13697,
+         "firstgid":12545,
          "image":"..\/..\/tileset_images\/objects-1.png",
          "imageheight":320,
          "imagewidth":528,
@@ -1126,7 +1134,7 @@
         }, 
         {
          "columns":64,
-         "firstgid":16337,
+         "firstgid":15185,
          "image":"..\/..\/tileset_images\/objects-items.png",
          "imageheight":512,
          "imagewidth":512,
@@ -1139,7 +1147,7 @@
         }, 
         {
          "columns":64,
-         "firstgid":20433,
+         "firstgid":19281,
          "image":"..\/..\/tileset_images\/objects-natural.png",
          "imageheight":512,
          "imagewidth":512,
@@ -1152,7 +1160,7 @@
         }, 
         {
          "columns":52,
-         "firstgid":24529,
+         "firstgid":23377,
          "image":"..\/..\/tileset_images\/objects-plants.png",
          "imageheight":416,
          "imagewidth":416,
@@ -1165,7 +1173,7 @@
         }, 
         {
          "columns":80,
-         "firstgid":27233,
+         "firstgid":26081,
          "image":"..\/..\/tileset_images\/place-cave.png",
          "imageheight":400,
          "imagewidth":640,
@@ -1178,7 +1186,7 @@
         }, 
         {
          "columns":26,
-         "firstgid":31233,
+         "firstgid":30081,
          "image":"..\/..\/tileset_images\/place-desert.png",
          "imageheight":384,
          "imagewidth":208,
@@ -1191,7 +1199,7 @@
         }, 
         {
          "columns":80,
-         "firstgid":32481,
+         "firstgid":31329,
          "image":"..\/..\/tileset_images\/place-overworld.png",
          "imageheight":576,
          "imagewidth":640,
@@ -1204,7 +1212,7 @@
         }, 
         {
          "columns":32,
-         "firstgid":38241,
+         "firstgid":37089,
          "image":"..\/..\/tileset_images\/place-sewer.png",
          "imageheight":352,
          "imagewidth":256,
@@ -1217,7 +1225,7 @@
         }, 
         {
          "columns":80,
-         "firstgid":39649,
+         "firstgid":38497,
          "image":"..\/..\/tileset_images\/place-forest.png",
          "imageheight":544,
          "imagewidth":640,
@@ -1230,7 +1238,7 @@
         }, 
         {
          "columns":256,
-         "firstgid":45089,
+         "firstgid":43937,
          "image":"..\/..\/tileset_images\/rpg.png",
          "imageheight":3040,
          "imagewidth":2048,
@@ -1243,7 +1251,7 @@
         }, 
         {
          "columns":20,
-         "firstgid":142369,
+         "firstgid":141217,
          "image":"..\/..\/tileset_images\/rpg2.png",
          "imageheight":448,
          "imagewidth":160,
@@ -1256,7 +1264,7 @@
         }, 
         {
          "columns":34,
-         "firstgid":143489,
+         "firstgid":142337,
          "image":"..\/..\/tileset_images\/rpg3.png",
          "imageheight":608,
          "imagewidth":272,
@@ -1269,7 +1277,7 @@
         }, 
         {
          "columns":8,
-         "firstgid":146073,
+         "firstgid":144921,
          "image":"..\/..\/tileset_images\/characters-4.png",
          "imageheight":128,
          "imagewidth":64,

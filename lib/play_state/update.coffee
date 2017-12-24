@@ -16,6 +16,11 @@ module.exports = ->
       @player_walking_direction = null
       @player.animations.stop null, true
 
+  # for name,text in @active_events
+  Object.keys(@active_events).forEach (event) =>
+    @active_events[event].x = Math.floor(@player.x + @player.width / 2)
+    @active_events[event].y = Math.floor(@player.y + @player.height / 2)
+
   # for trigger in @triggers
   #   if p2.Broadphase.aabbCheck(@player, trigger)
   #     console.log "zone"

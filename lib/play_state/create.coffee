@@ -48,6 +48,8 @@ module.exports = ->
 
   @trigger_objects_collision_group = @create_collision_group()
 
+  @active_events = {}
+
   [0..0].forEach (layer_idx) =>
     colliders = @game.physics.p2.convertCollisionObjects(
       map,
@@ -57,8 +59,15 @@ module.exports = ->
       collider.setCollisionGroup @trigger_objects_collision_group
       collider.collides @player_collision_group
       collider.data.shapes[0].sensor = true
-      collider.onBeginContact.add (a,b) ->
-        console.log map.objects["Event#{layer_idx}"][collider_idx].name
+      collider.onEndContact.add (a,b) =>
+        event = map.objects["Event#{layer_idx}"][collider_idx].name
+        @active_events[event].destroy()
+        delete @active_events[event]
+      collider.onBeginContact.add (a,b) =>
+        event = map.objects["Event#{layer_idx}"][collider_idx].name
+        text = @add.text(0, 0, event);
+        @active_events[event] = text
+
 
   @player.body.collides @trigger_objects_collision_group #, =>
   #   console.log "zone"
