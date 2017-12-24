@@ -2,7 +2,7 @@ module.exports = ->
 
   @game.load.spritesheet(
     'player', @Assets.player,
-    32,32,16
+    16,16,16
   )
 
   @game.load.tilemap(

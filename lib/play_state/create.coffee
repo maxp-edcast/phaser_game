@@ -19,24 +19,32 @@ module.exports = ->
     layer = map.createLayer "Layer#{i}"
     layer.resizeWorld()
     # layer.fixedToCamera = true
-# # 
+
   @game.stage.backgroundColor = "#FFFFFF"
 
   @player = @add_p2_sprite 50, 50, 'player'
   @collide_world_bounds(@player)
   @player.body.fixedRotation = true
   @groups.player = @add_group()
+  @player_collision_group = @create_collision_group()
+  @set_sprite_collision_group @player, @player_collision_group
 
-  @game.physics.p2.updateBoundsCollisionGroup();
   @game.camera.follow @player
   # @game.camera.roundPx = false
   # @player.fixedToCamera = true
 
-  # colliders = @game.physics.p2.convertCollisionObjects map, "Collides"
-  # colliders.forEach (collider) =>
-  #   collider.setCollisionGroup objects_collision_group
-  #   collider.collides @collision_groups.player
-  # @player.body.collides objects_collision_group
+  @objects_collision_group = @create_collision_group()
+  for i in [0..1]
+    colliders = @game.physics.p2.convertCollisionObjects(
+      map,
+      "Collision#{i}"
+    )
+    colliders.forEach (collider) =>
+      collider.setCollisionGroup @objects_collision_group
+      collider.collides @player_collision_group
+      @player.body.collides @objects_collision_group
+
+  @game.physics.p2.updateBoundsCollisionGroup();
 
   _.each
     walk_down: [0..3]
