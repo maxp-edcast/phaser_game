@@ -16,6 +16,12 @@ module.exports = ->
       @player_walking_direction = null
       @player.animations.stop null, true
 
+  # for trigger in @triggers
+  #   if p2.Broadphase.aabbCheck(@player, trigger)
+  #     console.log "zone"
+
+# overlap,if you uses a Box,p2.Broadphase.aabbCheck(bodyA,bodyB)bodyA overlap bodyB.
+
     # @equipped_rock.body.x = @player.world.x
     # @equipped_rock.body.y = @player.world.y
     # @equipped_rock.body.rotation = @player.worldRotation

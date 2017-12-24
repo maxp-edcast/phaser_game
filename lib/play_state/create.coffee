@@ -22,7 +22,7 @@ module.exports = ->
 
   @game.stage.backgroundColor = "#FFFFFF"
 
-  @player = @add_p2_sprite 50, 50, 'player'
+  @player = @add_p2_sprite 630, 320, 'player'
   @collide_world_bounds(@player)
   @player.body.fixedRotation = true
   @groups.player = @add_group()
@@ -33,18 +33,46 @@ module.exports = ->
   # @game.camera.roundPx = false
   # @player.fixedToCamera = true
 
-  @objects_collision_group = @create_collision_group()
+  @game.physics.p2.updateBoundsCollisionGroup();
+
+  @static_objects_collision_group = @create_collision_group()
   for i in [0..1]
     colliders = @game.physics.p2.convertCollisionObjects(
       map,
       "Collision#{i}"
     )
-    colliders.forEach (collider) =>
-      collider.setCollisionGroup @objects_collision_group
+    for collider in colliders
+      collider.setCollisionGroup @static_objects_collision_group
       collider.collides @player_collision_group
-      @player.body.collides @objects_collision_group
+  @player.body.collides @static_objects_collision_group
 
-  @game.physics.p2.updateBoundsCollisionGroup();
+  @trigger_objects_collision_group = @create_collision_group()
+
+  [0..0].forEach (layer_idx) =>
+    colliders = @game.physics.p2.convertCollisionObjects(
+      map,
+      "Event#{layer_idx}"
+    )
+    colliders.forEach (collider, collider_idx) =>
+      collider.setCollisionGroup @trigger_objects_collision_group
+      collider.collides @player_collision_group
+      collider.data.shapes[0].sensor = true
+      collider.onBeginContact.add (a,b) ->
+        console.log map.objects["Event#{layer_idx}"][collider_idx].name
+
+  @player.body.collides @trigger_objects_collision_group #, =>
+  #   console.log "zone"
+  #   false
+
+
+    # for collider in colliders
+      # console.log collider
+      # collider.data.sensor = true
+      # @player.body.collides @trigger_objects_collision_group
+      # collider.createBodyCallback @player, ->
+        # console.log("in zone")
+
+
 
   _.each
     walk_down: [0..3]
