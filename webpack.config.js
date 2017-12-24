@@ -14,6 +14,10 @@ module.exports = {
     loaders: [
       { test: /\.coffee$/, loader: "coffee-loader" },
       { test: /pixi.js/, loader: "script-loader" },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      }
 
     ]
   },

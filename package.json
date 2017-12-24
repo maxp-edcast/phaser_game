@@ -4,7 +4,7 @@
   "description": "",
   "main": "game.js",
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --content-base . --inline --hot",
+    "dev": "sh build.sh && ./node_modules/.bin/webpack-dev-server --content-base . --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js"
   },
@@ -24,5 +24,10 @@
     "underscore": "^1.8.3",
     "webpack": "^2.3.2",
     "webpack-dev-server": "^2.4.2"
+  },
+  "devDependencies": {
+    "install": "^0.10.2",
+    "json-loader": "^0.5.7",
+    "npm": "^5.6.0"
   }
 }

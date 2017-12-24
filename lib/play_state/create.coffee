@@ -1,5 +1,12 @@
 module.exports = ->
 
+  @cursors = @input.keyboard.createCursorKeys()
+  @game_keys =
+    W: @input.keyboard.addKey @keys.W
+    A: @input.keyboard.addKey @keys.A
+    S: @input.keyboard.addKey @keys.S
+    D: @input.keyboard.addKey @keys.D
+
   # map = @game.add.tilemap("tilemap1", 16, 16, 700, 500)
   # map.addTilesetImage "tileset1"
   # tiles_layer = map.createLayer "Tiles"
@@ -11,7 +18,6 @@ module.exports = ->
   @collide_world_bounds(@player)
   @player.body.fixedRotation = true
   @groups.player = @add_group()
-  @groups.global.add @player
 
   @game.physics.p2.updateBoundsCollisionGroup();
 

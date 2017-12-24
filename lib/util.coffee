@@ -25,7 +25,7 @@ module.exports = this
 
 @add_p2_sprite = (x, y, key) ->
   sprite = @add.sprite x, y, key
-  @physics.p2.enable sprite, DebugMode
+  @physics.p2.enable sprite, @debug_mode
   sprite
 
 @make_static = (sprite) ->
@@ -34,7 +34,7 @@ module.exports = this
 @turn_off_gravity = (sprite) ->
   sprite.body.data.gravityScale = 0
 
-@create_collision_group: ->
+@create_collision_group = ->
   collision_group = @game.physics.p2.createCollisionGroup()
   @game.physics.p2.updateBoundsCollisionGroup()
   collision_group
@@ -42,7 +42,7 @@ module.exports = this
 @set_sprite_collision_group = (sprite, collision_group) ->
   sprite.body.setCollisionGroup(collision_group)
 
-@add_group: ->
+@add_group = ->
   group = @game.add.group();
   group.enableBody = true;
   group.physicsBodyType = Phaser.Physics.P2JS;

@@ -1,10 +1,11 @@
 module.exports = ->
 
+  console.log @player_movement_speed
   movement_vector = {
-    walk_left: x: -@state.player_movement_speed
-    walk_right: x: @state.player_movement_speed
-    walk_up: y: -@state.player_movement_speed
-    walk_down: y: @state.player_movement_speed
+    walk_left: x: -@player_movement_speed
+    walk_right: x: @player_movement_speed
+    walk_up: y: -@player_movement_speed
+    walk_down: y: @player_movement_speed
   }[@player_walking_direction] || {}
   @player.body.moveLeft -(movement_vector.x||0)
   @player.body.moveUp -(movement_vector.y||0)

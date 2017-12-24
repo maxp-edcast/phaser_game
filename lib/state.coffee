@@ -1,6 +1,4 @@
-module.exports = load: (caller) -> (->
-
-  { game } = caller
+module.exports = (->
 
   @debug_mode = true
 
@@ -25,13 +23,7 @@ module.exports = load: (caller) -> (->
     S: Phaser.Keyboard.S
     D: Phaser.Keyboard.D
 
-  @cursors = game.input.keyboard.createCursorKeys()
-  @game_keys =
-    W: game.input.keyboard.addKey @keys.W
-    A: game.input.keyboard.addKey @keys.A
-    S: game.input.keyboard.addKey @keys.S
-    D: game.input.keyboard.addKey @keys.D
-
+  @groups = {}
 
   this
 

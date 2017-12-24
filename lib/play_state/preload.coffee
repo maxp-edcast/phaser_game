@@ -11,10 +11,11 @@ module.exports = ->
   #   null,
   #   Phaser.Tilemap.TILED_JSON
   # )
-  # @game.load.image(
-  #   "tileset1",
-  #   @Assets.tileset1
-  # )
+
+  tileset_images = require("../../assets.json")
+  console.log tileset_images
+  for key,path of tileset_images
+    @game.load.image(key, path)
 
 
 
