@@ -62,7 +62,54 @@
  <tileset firstgid="7585" name="doors" tilewidth="8" tileheight="8" tilecount="1024" columns="32">
   <image source="../../tileset_images/doors.png" width="256" height="256"/>
  </tileset>
- <tileset firstgid="8609" source="../../tileset_images/characters5.tsx"/>
+ <tileset firstgid="8609" name="characters5" tilewidth="8" tileheight="8" tilecount="1536" columns="24">
+  <image source="../../tileset_images/characters5.png" width="192" height="128"/>
+ </tileset>
+ <tileset firstgid="10145" name="characters-1" tilewidth="8" tileheight="8" tilecount="96" columns="16">
+  <image source="../../tileset_images/characters-1.png" width="128" height="48"/>
+ </tileset>
+ <tileset firstgid="10241" name="characters-3" tilewidth="8" tileheight="8" tilecount="3456" columns="72">
+  <image source="../../tileset_images/characters-3.png" width="576" height="384"/>
+ </tileset>
+ <tileset firstgid="13697" name="objects-1" tilewidth="8" tileheight="8" tilecount="2640" columns="66">
+  <image source="../../tileset_images/objects-1.png" width="528" height="320"/>
+ </tileset>
+ <tileset firstgid="16337" name="objects-items" tilewidth="8" tileheight="8" tilecount="4096" columns="64">
+  <image source="../../tileset_images/objects-items.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="20433" name="objects-natural" tilewidth="8" tileheight="8" tilecount="4096" columns="64">
+  <image source="../../tileset_images/objects-natural.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="24529" name="objects-plants" tilewidth="8" tileheight="8" tilecount="2704" columns="52">
+  <image source="../../tileset_images/objects-plants.png" width="416" height="416"/>
+ </tileset>
+ <tileset firstgid="27233" name="place-cave" tilewidth="8" tileheight="8" tilecount="4000" columns="80">
+  <image source="../../tileset_images/place-cave.png" width="640" height="400"/>
+ </tileset>
+ <tileset firstgid="31233" name="place-desert" tilewidth="8" tileheight="8" tilecount="1248" columns="26">
+  <image source="../../tileset_images/place-desert.png" width="208" height="384"/>
+ </tileset>
+ <tileset firstgid="32481" name="place-overworld" tilewidth="8" tileheight="8" tilecount="5760" columns="80">
+  <image source="../../tileset_images/place-overworld.png" width="640" height="576"/>
+ </tileset>
+ <tileset firstgid="38241" name="place-sewer" tilewidth="8" tileheight="8" tilecount="1408" columns="32">
+  <image source="../../tileset_images/place-sewer.png" width="256" height="352"/>
+ </tileset>
+ <tileset firstgid="39649" name="place-forest" tilewidth="8" tileheight="8" tilecount="5440" columns="80">
+  <image source="../../tileset_images/place-forest.png" width="640" height="544"/>
+ </tileset>
+ <tileset firstgid="45089" name="rpg" tilewidth="8" tileheight="8" tilecount="97280" columns="256">
+  <image source="../../tileset_images/rpg.png" width="2048" height="3040"/>
+ </tileset>
+ <tileset firstgid="142369" name="rpg2" tilewidth="8" tileheight="8" tilecount="1120" columns="20">
+  <image source="../../tileset_images/rpg2.png" width="160" height="448"/>
+ </tileset>
+ <tileset firstgid="143489" name="rpg3" tilewidth="8" tileheight="8" tilecount="2584" columns="34">
+  <image source="../../tileset_images/rpg3.png" width="272" height="608"/>
+ </tileset>
+ <tileset firstgid="146073" name="characters-4" tilewidth="8" tileheight="8" tilecount="128" columns="8">
+  <image source="../../tileset_images/characters-4.png" width="64" height="128"/>
+ </tileset>
  <layer name="Layer0" width="160" height="60">
   <data encoding="csv">
 604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,604,

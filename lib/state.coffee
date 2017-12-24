@@ -2,8 +2,8 @@ module.exports = (->
 
   @debug_mode = true
 
-  @width = 700
-  @height = 500
+  @width = 1280 * 2
+  @height = 480 * 2
 
   @player_movement_speed = 200
 

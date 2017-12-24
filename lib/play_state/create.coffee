@@ -1,17 +1,25 @@
 module.exports = ->
 
+  # @world.scale.setTo(2, 2)
+
   @cursors = @input.keyboard.createCursorKeys()
+
   @game_keys =
     W: @input.keyboard.addKey @keys.W
     A: @input.keyboard.addKey @keys.A
     S: @input.keyboard.addKey @keys.S
     D: @input.keyboard.addKey @keys.D
 
-  # map = @game.add.tilemap("tilemap1", 16, 16, 700, 500)
-  # map.addTilesetImage "tileset1"
-  # tiles_layer = map.createLayer "Tiles"
-  # tiles_layer.resizeWorld()
+  map = @game.add.tilemap("government_facility", 8, 8, 160, 60)
 
+  for key in Object.keys(@tileset_images)
+    map.addTilesetImage key
+
+  tiles_layers = [0..5].map (i) ->
+    layer = map.createLayer "Layer#{i}"
+    layer.resizeWorld()
+    # layer.fixedToCamera = true
+# # 
   @game.stage.backgroundColor = "#FFFFFF"
 
   @player = @add_p2_sprite 50, 50, 'player'
@@ -20,6 +28,9 @@ module.exports = ->
   @groups.player = @add_group()
 
   @game.physics.p2.updateBoundsCollisionGroup();
+  @game.camera.follow @player
+  # @game.camera.roundPx = false
+  # @player.fixedToCamera = true
 
   # colliders = @game.physics.p2.convertCollisionObjects map, "Collides"
   # colliders.forEach (collider) =>

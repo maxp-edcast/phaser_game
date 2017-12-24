@@ -6,3 +6,4 @@
 
 module.exports = Assets =
   player: "assets/player_spritesheet.png"
+  government_facility: "assets/tilesets/government_facility/government_facility.json"

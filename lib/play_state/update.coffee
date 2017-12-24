@@ -1,6 +1,5 @@
 module.exports = ->
 
-  console.log @player_movement_speed
   movement_vector = {
     walk_left: x: -@player_movement_speed
     walk_right: x: @player_movement_speed
