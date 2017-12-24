@@ -16,10 +16,12 @@ module.exports = ->
       @player_walking_direction = null
       @player.animations.stop null, true
 
-  # for name,text in @active_events
-  Object.keys(@active_events).forEach (event) =>
-    @active_events[event].x = Math.floor(@player.x + @player.width / 2)
-    @active_events[event].y = Math.floor(@player.y + @player.height / 2)
+  num_active_events = Object.keys(@active_events).length
+  if num_active_events == 1
+    event = Object.keys(@active_events)[0]
+    text = @active_events[event]
+    text.x = Math.floor(@player.x + @player.width / 2)
+    text.y = Math.floor(@player.y + @player.height / 2)
 
   # for trigger in @triggers
   #   if p2.Broadphase.aabbCheck(@player, trigger)

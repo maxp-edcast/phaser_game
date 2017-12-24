@@ -9,6 +9,7 @@ module.exports = ->
     A: @input.keyboard.addKey @keys.A
     S: @input.keyboard.addKey @keys.S
     D: @input.keyboard.addKey @keys.D
+    enter: @input.keyboard.addKey @keys.enter
 
   map = @game.add.tilemap("government_facility", 8, 8, 160, 60)
 
@@ -67,11 +68,15 @@ module.exports = ->
         event = map.objects["Event#{layer_idx}"][collider_idx].name
         text = @add.text(0, 0, event);
         @active_events[event] = text
+  @player.body.collides @trigger_objects_collision_group
+
+  @game_keys.enter.onDown.add =>
+    if Object.keys(@active_events).length == 1
+      event = Object.keys(@active_events)[0]
+      text = @active_events[event]
+      text.setText("done")
 
 
-  @player.body.collides @trigger_objects_collision_group #, =>
-  #   console.log "zone"
-  #   false
 
 
     # for collider in colliders

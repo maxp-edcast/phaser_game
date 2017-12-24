@@ -25,6 +25,7 @@ module.exports = (->
     A: Phaser.Keyboard.A
     S: Phaser.Keyboard.S
     D: Phaser.Keyboard.D
+    enter: Phaser.Keyboard.ENTER
 
   @groups = {}
 
