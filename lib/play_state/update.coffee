@@ -1,9 +1,37 @@
-module.exports = ->
+module.exports = -> (->
 
   @update_player_movement()
 
   @update_active_event()
+  # debugger
+  @mask_graphics.clear()
 
+  if @player
+
+    mouseAngle = Math.atan2(
+      (@player.world.y - @input.worldY),
+      (@player.world.x - @input.worldX)
+    )
+    @mask_graphics.lineStyle(2, 0xffffff, 1)
+    @mask_graphics.beginFill(0xffff00)
+    @mask_graphics.moveTo(@player.world.x, @player.world.y)
+    for i in [0..@numberOfRays]
+      @ray_angle = mouseAngle - (@lightAngle/2) +
+                   (@lightAngle/@numberOfRays) * i
+      { x, y } = @player.world
+      for j in [1...@rayLength+1]
+        landing_x = Math.round(@player.world.x-(2*j)*Math.cos(@ray_angle))
+        landing_y = Math.round(@player.world.y-(2*j)*Math.sin(@ray_angle))
+        if @light_map.getPixel32(landing_x,landing_y) == 0
+          x = landing_x
+          y = landing_y
+        else
+          @mask_graphics.lineTo(x,y)
+          break
+      @mask_graphics.lineTo(x,y)
+      @mask_graphics.endFill()
+
+).apply @game
   # for trigger in @triggers
   #   if p2.Broadphase.aabbCheck(@player, trigger)
   #     console.log "zone"

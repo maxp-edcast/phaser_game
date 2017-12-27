@@ -1,4 +1,4 @@
-module.exports = ->
+module.exports = -> (->
 
   # @world.scale.setTo(2, 2)
 
@@ -22,6 +22,14 @@ module.exports = ->
 
   @get_player_walk_input()
 
-  @finalize_p2()
 
+  @light_map = @make.bitmapData @width, @height
+  @light_map.draw "government_facility_light_map"
+  
+  @mask_graphics = @add.graphics 0,0
+  
+  @light_map.update()
+
+  @finalize_p2()
+).apply @game
 

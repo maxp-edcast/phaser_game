@@ -2,8 +2,8 @@ module.exports = (->
 
   @debug_mode = true
 
-  @width = 1280 * 2
-  @height = 480 * 2
+  @width = 1280
+  @height = 480
 
   @player_movement_speed = 75
   @player_run_speed = 150
@@ -13,6 +13,10 @@ module.exports = (->
   @gravity =
     x: 0
     y: 800
+
+  @lightAngle = Math.PI/4
+  @numberOfRays = 20
+  @rayLength = 100
 
   @collision_groups = {}
   @materials = {}

@@ -30,7 +30,10 @@ module.exports = load: (game) -> (->
 
   @use_p2_physics = =>
     @physics.startSystem Phaser.Physics.P2JS
-    @physics.p2.setImpactEvents(true);
+    @physics.p2.setImpactEvents(true)
+
+  @load_image = (key) =>
+    @load.image key, @Assets[key]
 
   @load_spritesheet = (key, tile_size, num_tiles) =>
     @load.spritesheet(key, @Assets[key], tile_size, tile_size, num_tiles)
