@@ -1,6 +1,6 @@
 module.exports = (->
 
-  @debug_mode = false
+  @debug_mode = true
 
   @width = 1280 * 2
   @height = 480 * 2

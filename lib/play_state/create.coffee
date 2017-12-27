@@ -2,108 +2,26 @@ module.exports = ->
 
   # @world.scale.setTo(2, 2)
 
-  @cursors = @input.keyboard.createCursorKeys()
+  @setup_game_keys("W", "A", "S", "D", "enter")
 
-  @game_keys =
-    W: @input.keyboard.addKey @keys.W
-    A: @input.keyboard.addKey @keys.A
-    S: @input.keyboard.addKey @keys.S
-    D: @input.keyboard.addKey @keys.D
-    enter: @input.keyboard.addKey @keys.enter
+  @map = @add_tilemap "government_facility", 8, 160, 60
 
-  map = @game.add.tilemap("government_facility", 8, 8, 160, 60)
+  @add_tileset_images(@map)
 
-  for key in Object.keys(@tileset_images)
-    map.addTilesetImage key
+  @add_layers(@map, "Layer", [0..5])
 
-  tiles_layers = [0..5].map (i) ->
-    layer = map.createLayer "Layer#{i}"
-    layer.resizeWorld()
-    # layer.fixedToCamera = true
+  @set_background_color "#FFFFFF"
 
-  @game.stage.backgroundColor = "#FFFFFF"
+  @add_player()
 
-  @player = @add_p2_sprite 630, 320, 'player'
-  @collide_world_bounds(@player)
-  @player.body.fixedRotation = true
-  @groups.player = @add_group()
-  @player_collision_group = @create_collision_group()
-  @set_sprite_collision_group @player, @player_collision_group
+  @add_static_objects(@map)
 
-  @game.camera.follow @player
-  # @game.camera.roundPx = false
-  # @player.fixedToCamera = true
+  @add_trigger_objects(@map)
 
-  @game.physics.p2.updateBoundsCollisionGroup();
+  @handle_trigger_entry()
 
-  @static_objects_collision_group = @create_collision_group()
-  for i in [0..1]
-    colliders = @game.physics.p2.convertCollisionObjects(
-      map,
-      "Collision#{i}"
-    )
-    for collider in colliders
-      collider.setCollisionGroup @static_objects_collision_group
-      collider.collides @player_collision_group
-  @player.body.collides @static_objects_collision_group
+  @get_player_walk_input()
 
-  @trigger_objects_collision_group = @create_collision_group()
-
-  @active_events = {}
-
-  [0..0].forEach (layer_idx) =>
-    colliders = @game.physics.p2.convertCollisionObjects(
-      map,
-      "Event#{layer_idx}"
-    )
-    colliders.forEach (collider, collider_idx) =>
-      collider.setCollisionGroup @trigger_objects_collision_group
-      collider.collides @player_collision_group
-      collider.data.shapes[0].sensor = true
-      collider.onEndContact.add (a,b) =>
-        event = map.objects["Event#{layer_idx}"][collider_idx].name
-        @active_events[event].destroy()
-        delete @active_events[event]
-      collider.onBeginContact.add (a,b) =>
-        event = map.objects["Event#{layer_idx}"][collider_idx].name
-        text = @add.text(0, 0, event);
-        @active_events[event] = text
-  @player.body.collides @trigger_objects_collision_group
-
-  @game_keys.enter.onDown.add =>
-    if Object.keys(@active_events).length == 1
-      event = Object.keys(@active_events)[0]
-      text = @active_events[event]
-      text.setText("done")
-
-
-
-
-    # for collider in colliders
-      # console.log collider
-      # collider.data.sensor = true
-      # @player.body.collides @trigger_objects_collision_group
-      # collider.createBodyCallback @player, ->
-        # console.log("in zone")
-
-
-
-  _.each
-    walk_down: [0..3]
-    walk_left: [4..7]
-    walk_right: [8..11]
-    walk_up: [12..15]
-  , (frames, key) =>
-    @player.animations.add key, frames
-  _.each
-    W: 'walk_up',
-    A: 'walk_left',
-    S: 'walk_down',
-    D: 'walk_right'
-  , (anim, key) =>
-    @game_keys[key].onDown.add =>
-        @player.animations.play anim, @player_anim_speed, true
-        @player_walking = true
-        @player_walking_direction = anim
+  @finalize_p2()
 
 

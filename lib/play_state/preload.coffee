@@ -1,20 +1,6 @@
 module.exports = ->
 
-  @game.load.spritesheet(
-    'player', @Assets.player,
-    16,16,16
-  )
-
-  @game.load.tilemap(
-    "government_facility",
-    @Assets.government_facility,
-    null,
-    Phaser.Tilemap.TILED_JSON
-  )
-
-  @tileset_images = require("../../assets.json")
-  for key,path of @tileset_images
-    @game.load.image(key, path)
-
-
+  @load_spritesheet('player', 16, 16)
+  @load_tilemap 'government_facility'
+  @load_tileset_images()
 
